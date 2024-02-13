@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+  </head>
+  <style>
+    section img {
+      height: 400px;
+      width: 240px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    @media screen and (max-width: 464px) {
+      section {
+        height: auto;
+        padding-bottom: 50px;
+      }
+      section img {
+        height: 300px;
+        width: 140px;
+        border-radius: 20px;
+        object-fit: cover;
+      }
+    }
+    .inactive {
+      transform: translateX(0px);
+      transition: all 0.4s linear;
+    }
+  </style>
+  <body>
+    <nav
+      class="flex items-center justify-evenly gap-10 mt-5 mr-[10px] ml-[30px]"
+    >
+      <div class="logo">
+        <img src="./media/pinterest.png" class="h-[40px] md:h-[30px]" alt="" />
+      </div>
+      <div
+        class="menu translate-x-[-600px] md:translate-x-0 transition-all absolute top-0 left-0 w-[100%] md:w-[250px] md:flex md:static"
+        id="menu"
+      >
+        <ul
+          class="gap-[20px] font-bold bg-black text-white absolute top-0 left-0 md:flex md:gap-[30px] w-[50%] h-[100vh] p-10 text-2xl md:h-[10vh] md:text-black md:static md:p-2 md:text-[15px] md:bg-transparent"
+        >
+          <li
+            class="text-red-500 cursor-pointer hover:bg-black hover:text-green-300 md:hover:text-white p-3 rounded-3xl duration-[0.2s]"
+          >
+            Home
+          </li>
+          <li
+            class="cursor-pointer hover:bg-black md:hover:text-white p-3 rounded-3xl duration-[0.2s] hover:text-green-300"
+          >
+            Explore
+          </li>
+          <li
+            class="cursor-pointer hover:bg-black md:hover:text-white p-3 rounded-3xl duration-[0.2s] hover:text-green-300"
+          >
+            Create
+          </li>
+        </ul>
+      </div>
+      <div
+        class="input flex justify-start items-center rounded-3xl gap-2 bg-zinc-300 border-black w-[200px] h-[40px] md:w-[300px] lg:w-[500px]"
+      >
+        <img
+          src="./media/search-interface-symbol.png"
+          class="h-[20px] ml-4"
+          alt=""
+        />
+        <input
+          type="text"
+          class="w-[200px] rounded-3xl p-2 bg-transparent focus:outline-none focus:border-none font-bold sm:w-[300px] text-black md:w-[400px]"
+          id="type"
+          placeholder="Search here..."
+        />
+      </div>
+      <div
+        class="hidden icons md:flex items-center gap-4 justify-evenly md:gap-[50px]"
+      >
+        <img
+          src="./media/bell.png"
+          class="h-[30px] cursor-pointer hover:bg-gray-200 rounded-3xl p-1"
+          alt=""
+        /><img
+          src="./media/chat.png"
+          class="h-[30px] cursor-pointer hover:bg-gray-200 rounded-3xl p-1"
+          alt=""
+        /><img
+          src="./media/user.png"
+          class="h-[30px] cursor-pointer hover:bg-gray-200 rounded-3xl p-1"
+          alt=""
+        />
+      </div>
+
+      <div class="ham">
+        <img
+          id="ham"
+          src="./media/menu.png"
+          class="h-[30px] cursor-pointer md:hidden"
+        />
+
+        <img
+          id="close"
+          src="./media/close.png"
+          class="h-[30px] cursor-pointer hidden md:hidden"
+        />
+      </div>
+    </nav>
+
+    <article
+      id="merger"
+      class="flex flex-col items-center justify-center mt-10"
+    >
+      <section
+        id="main"
+        class="mt-10 pt-5 justify-center flex flex-wrap items-start gap-[40px] pr-[40px] pl-[40px]"
+      ></section>
+      <footer class="h-[100px] flex items-center justify-center">
+        <button
+          id="btn"
+          class="bg-sky-500 text-white rounded-3xl pl-6 pr-6 pt-2 pb-2"
+        >
+          Click to load more...
+        </button>
+      </footer>
+    </article>
+
+    <script src="script.js"></script>
+  </body>
+</html>
