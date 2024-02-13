@@ -21,11 +21,14 @@ close.addEventListener("click", () => {
 });
 
 type.addEventListener("focus", () => {
-  merger.style.backgroundColor = "#D4D4D8";
+  merger.classList.add("hidden");
+
+  // merger.style.backgroundColor = "#D4D4D8";
 });
 
 type.addEventListener("blur", function () {
-  merger.style.backgroundColor = "transparent";
+  merger.classList.remove("hidden");
+  // merger.style.backgroundColor = "transparent";
 });
 let value = 10;
 
